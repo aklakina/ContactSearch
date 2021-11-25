@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Adatbázis szerkesztés</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_3">
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QTableWidget" name="tableWidget">
+            <property name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ez a táblázat egy szomszédsági mátrix, ahol a cellák értékei a találkozás dátumai éééé.hh.nn formátumban.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTextEdit" name="textEdit">
+            <property name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ez a szövegdoboz a már meglévő adatok tömeges szerkesztésére van. A szerkesztés syntaxisa a következő: ANévSorszáma,BNévSorszáma,Dátum1;CNévSorszáma,DNévSorszám,Dátum2&lt;/p&gt;&lt;p&gt;Ebben az esetben A és B között beállítja a Dátum1 találkozási pontot és C és D között a Dátum2-őt. Természetesen ez N darabra is működik.&lt;/p&gt;&lt;p&gt;A szöveg beírása után nyomd meg a Szerkesztések mentése gombot a változtatások elvégzéséhez.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QLineEdit" name="lineEdit">
+          <property name="maximumSize">
+           <size>
+            <width>301</width>
+            <height>22</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ide írd a neveket amiket hozzá szeretnél adni az adatbázishoz &amp;quot;;&amp;quot;-vel elválasztva.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>100</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_2">
+          <property name="maximumSize">
+           <size>
+            <width>143</width>
+            <height>28</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Szerkesztések mentése</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item>
+         <widget class="QPushButton" name="pushButton">
+          <property name="maximumSize">
+           <size>
+            <width>141</width>
+            <height>28</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Név hozzáadása</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>250</width>
+            <height>17</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2"/>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuData_Manipulation">
+    <property name="title">
+     <string>Adat szerkesztés</string>
+    </property>
+    <addaction name="actionRead"/>
+    <addaction name="actionSave_as"/>
+    <addaction name="separator"/>
+    <addaction name="actionNew"/>
+   </widget>
+   <widget class="QMenu" name="menuData_Reading">
+    <property name="title">
+     <string>Adat olvasás</string>
+    </property>
+    <addaction name="actionHuman_Readable_format"/>
+    <addaction name="separator"/>
+    <addaction name="actionQuery"/>
+   </widget>
+   <addaction name="menuData_Manipulation"/>
+   <addaction name="menuData_Reading"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionRead">
+   <property name="text">
+    <string>Megnyitás...</string>
+   </property>
+  </action>
+  <action name="actionSave_as">
+   <property name="text">
+    <string>Mentés...</string>
+   </property>
+  </action>
+  <action name="actionNew">
+   <property name="text">
+    <string>Új</string>
+   </property>
+  </action>
+  <action name="actionHuman_Readable_format">
+   <property name="text">
+    <string>Ember számára is érthető formátum</string>
+   </property>
+  </action>
+  <action name="actionQuery">
+   <property name="text">
+    <string>Lekérdezések</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
